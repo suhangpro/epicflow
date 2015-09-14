@@ -12,10 +12,14 @@ Tested only on 64 bit Linux.
 
 * compute optical flow
 ```
->> addpath(PATH_TO_REPO_ROOT);
 >> f = get_epicflow(IMAGE1_PATH, IMAGE2_PATH, FLOW_SAVE_PATH);
+```
+* compute optical flow for a folder (see dir_get_epicflow.m for more options)
+```
+>> dir_get_epicflow(FOLDER_PATH, FLOW_SAVE_FOLDER_PATH)
 ```
 * visualize result (uses [Middlebury optical flow toolbox](http://vision.middlebury.edu/flow/code/flow-code-matlab.zip))
 ```
->> imshow(flowToColor(readFlowFile(f)))
+>> addpath(genpath('utils'));
+>> imshow(flowToColor(readFlowFile(f)));
 ```
