@@ -34,7 +34,7 @@ if ~exist('opt_interval','var'), opt_interval = 1; end
 
 % frame & flow files 
 files = dir(fullfile(folder_path,'*.png')); 
-files = {files.name}; 
+files = sort({files.name}); 
 first_idxs = 1:opt_step:(numel(files)-opt_interval); 
 second_idxs = first_idxs + opt_interval; 
 first_files = cellfun(@(s) fullfile(folder_path, s), files(first_idxs), ...
