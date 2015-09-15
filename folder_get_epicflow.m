@@ -1,5 +1,5 @@
-function dir_get_epicflow( folder_path, flow_path, model_path, n_pool, opt_step, opt_interval)
-%DIR_GET_EPICFLOW Compute EpicFlow for frames in a folder 
+function folder_get_epicflow( folder_path, flow_path, model_path, n_pool, opt_step, opt_interval)
+%FOLDER_GET_EPICFLOW Compute EpicFlow for frames in a folder 
 % folder_path 
 %   path to a folder containing consecutive frames (.png files)
 % flow_path: (default: folder_path)
@@ -47,7 +47,13 @@ flo_files = cellfun(@(s) fullfile(flow_path, [s(1:end-4) '.flo']), ...
 % get epicflow
 N = numel(flo_files); 
 if n_pool>0, 
-    pool = parpool(n_pool); 
+    pool = gcp('nocreate'); 
+    if isempty(pool), 
+        parpool(n_pool); 
+    elseif pool.NumWorkers<n_pool, 
+        delete(pool);
+        parpool(n_pool);
+    end
     parfor_progress(N);
     parfor i=1:N, 
         get_epicflow(first_files{i}, second_files{i}, flo_files{i}, model_path);
