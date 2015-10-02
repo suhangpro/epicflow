@@ -2,8 +2,8 @@
 
 A Matlab wrapper for EpicFlow:
 
-EpicFlow: Edge-Preserving Interpolation of Correspondences for Optical 
-Flow, Jerome Revaud, Philippe Weinzaepfel, Zaid Harchaoui and Cordelia 
+[EpicFlow: Edge-Preserving Interpolation of Correspondences for Optical 
+Flow](http://lear.inrialpes.fr/src/epicflow/), Jerome Revaud, Philippe Weinzaepfel, Zaid Harchaoui and Cordelia 
 Schmid, CVPR 2015.
 
 Tested only on 64 bit Linux. 
