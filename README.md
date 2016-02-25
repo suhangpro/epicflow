@@ -18,7 +18,7 @@ Tested only on 64 bit Linux.
 ```
 >> dir_get_epicflow(FOLDER_PATH, FLOW_SAVE_FOLDER_PATH)
 ```
-* visualize result (uses [Middlebury optical flow toolbox](http://vision.middlebury.edu/flow/code/flow-code-matlab.zip))
+* visualize result (uses Middlebury optical flow toolbox)
 ```
 >> addpath(genpath('utils'));
 >> imshow(flowToColor(readFlowFile(f)));
