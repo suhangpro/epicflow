@@ -75,7 +75,7 @@ if ~isempty(file_names),
     else
         parfor_progress(N);
         for i=1:N,
-            get_epicflow(first_files{i}, second_files{i}, flo_files{i}, model_path);
+            get_epicflow(first_files{i}, second_files{i}, flo_files{i}, []);
             parfor_progress();
         end
     end
